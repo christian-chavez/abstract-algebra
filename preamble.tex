@@ -1,0 +1,255 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,]{babel}
+\usepackage[super]{nth}
+\usepackage{
+    amsmath,
+    amsfonts,
+    amssymb,
+    amsthm,
+    imakeidx,
+    graphicx,
+    polynom,
+    % subcaption,
+    lipsum,
+    lmodern,
+    systeme,
+    float,
+    ifthen,
+    mathrsfs,
+    units,
+    % enumerate,
+    enumitem,
+    multicol,
+    geometry,
+    mdframed,
+    setspace,
+    subcaption,
+    anyfontsize,
+    mathtools,
+    % fancyhdr,
+    booktabs,
+    multirow,
+    csquotes,
+    microtype,
+    bookmark,
+    emptypage,
+    blkarray,
+    aliascnt,
+    dsfont,
+    comment,
+    tabularx,
+    % mathds,
+    titlesec,
+    cancel,
+    currfile,
+}
+\usepackage[perpage]{footmisc}
+
+\setenumerate{topsep=0pt}
+
+\setlength{\parskip}{0.5\baselineskip}%
+
+% \fontseries{b}\selectfont
+% \renewcommand{\bfdefault}{b}
+
+\titleformat{\chapter}
+  {\normalfont\Huge}{\Huge\thechapter}{15pt}{\Huge}
+
+% \titleformat{\section}
+%   {\normalfont\large}{\large\thechapter}{15pt}{\large}
+
+% \titleformat{\section}
+%   {\normalfont\Huge}{\Huge\thechapter}{15pt}{\Huge}
+
+% \onehalfspacing
+\setstretch{1.15}
+\geometry{
+    margin=1in,
+    headheight=50pt,
+    headsep=12pt,
+    % showframe
+    % textwidth=5in,
+}
+% \decimalpoint
+\raggedbottom
+% \pagestyle{plain}
+% \fancyhf{}
+% % \fancyheadoffset{1.0mm}
+% \lhead{\includegraphics[width=0.35\textwidth]{logoECMC.png}}
+% \rhead{\includegraphics[width=0.25\textwidth]{logoYachay.png}}
+% \fancyfoot[RO,LE]{\thepage}
+
+\usepackage[delims=\lbrack\rbrack]{spalign}
+\let\matrix=\spalignmat
+\let\Amatrix=\spalignaugmat
+\let\AAmatrix=\spalignaugmatn
+\newcommand{\Dmatrix}[1]{\spaligndelims\vert\vert\spalignmat{#1}}
+
+% \fancyhead[RE]{\scshape{\nouppercase{\leftmark}}}
+% \fancyhead[LO]{\scshape{\nouppercase{\rightmark}}}
+% \renewcommand{\headrulewidth}{0pt}
+\graphicspath{{images/}}
+\bookmarksetup{numbered}
+\makeatletter
+ \renewcommand\Hy@numberline[1]{#1. }
+\makeatother
+\usepackage{hyperref}
+\hypersetup{%
+    colorlinks = {true},
+            linkcolor = {blue},
+            urlcolor  = {blue},
+            citecolor = {blue},
+            anchorcolor = {blue},
+    pdftitle    ={},
+    pdfauthor   ={Christian Chávez},
+    pdfsubject  ={Abstract Algebra},
+    pdfcreator  ={LaTeX},
+    pdfproducer ={Christian Chávez},
+    % pdfkeywords={}{}{},
+    % hidelinks,
+    pdfpagemode={UseNone},
+}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\renewcommand\tabularxcolumn[1]{m{#1}}
+% \renewcommand\arraystretch{1.5}
+
+\newcommand{\p}{\cdot}
+% \newenvironment{solution}{\noindent\textbf{\textsl{Solution}.}}{\hfill$\square$}
+% \newenvironment{remark}{\noindent\textbf{\textsl{Remark.}}}{}
+% \theoremstyle{definition}
+% \newtheorem{problem}{Problem}%[chapter]
+
+% \setlength\parindent{0pt}
+
+% Nuevos comandos
+\let\originalleft\left
+\let\originalright\right
+% \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+% \renewcommand{\right}{\aftergroup\egroup\originalright}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\II}{\mathds{I}}
+\newcommand{\K}{\mathds{K}}
+\newcommand{\PP}{\mathds{P}}
+\newcommand{\C}{\mathds{C}}
+\newcommand{\T}{\mathscr{T}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\U}{\mathscr{U}}
+\newcommand{\LL}{\mathscr{L}}
+\newcommand{\OO}{\mathscr{O}}
+\newcommand{\Fam}{\mathscr{F}}
+\newcommand{\Nei}{\mathscr{N}}
+\newcommand{\Pt}{\mathscr{P}}
+% \newcommand{\ES}{\text{\upshape\O}}
+% \renewcommand{\ES}{\cancel{\mathrm{O}}}
+\newcommand{\ES}{\varnothing}
+\newcommand{\TopS}{\left( X, \T \right)}
+\newcommand{\bcap}{\bigcap}
+\newcommand{\bcup}{\bigcup}
+\newcommand{\dif}{\backslash}
+\newcommand{\Solution}{\noindent\textbf{Solution.}}
+% \let\oldbigcup\bigcup
+% \renewcommand{\bigcup}{\boldsymbol{\oldbigcup}} 
+
+\newcommand{\ev}{\textsc{ev}}
+\newcommand{\ii}{\hat{\imath}}
+\newcommand{\jj}{\hat{\jmath}}
+\newcommand{\kk}{\hat{k}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\va}{\mathbf{a}}
+\newcommand{\vb}{\mathbf{b}}
+\newcommand{\vd}{\mathbf{d}}
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\vy}{\mathbf{y}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vzr}{\mathbf{0}}
+\newcommand{\pp}{\boldsymbol{\cdot}}
+\newcommand{\AND}{\quad\text{and}\quad}
+\newcommand{\seq}{\subseteq}
+\newcommand{\sep}{\supseteq}
+\newcommand{\nseq}{\nsubseteq}
+\newcommand{\then}{\implies}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\Abs}[1]{\left|\!\left|#1\right|\!\right|}
+\newcommand{\prt}[1]{\left(#1\right)}
+\newcommand{\End}{\hfill\(\square\)}
+\newcommand{\Mod}[1]{\ \left(\mathrm{mod}\ #1\right)}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\renewcommand\labelitemi{$\bullet$}
+\newcommand{\interior}[1]{#1^\circ}
+\renewcommand\labelitemi{$\bullet$}
+\renewcommand{\labelitemii}{$ \circ $}
+\renewcommand{\mathbb}[1]{\mathds{#1}}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\proy}{proy}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\dd}{d }
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\ddd}{d\!}
+% \DeclareMathOperator{\y}{y}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nul}{nul}
+\DeclareMathOperator{\Int}{int}
+\DeclareMathOperator{\cla}{cla}
+
+% Añadidos después
+\newcommand{\vect}[1]{\left( {#1}_{1},\dots,{#1}_{n} \right)}
+
+\usepackage{amsthm}
+\newtheoremstyle{uptheorem} 
+{0.75cm}{0.75cm}{\upshape}{}{\bfseries}{.}{ }{} 
+\newtheoremstyle{sltheorem} 
+{0.75cm}{0.3cm}{\slshape}{}{\bfseries}{.}{ }{} 
+\theoremstyle{sltheorem}
+\newtheorem{theorem}{Problem}%[chapter]
+\newtheorem{definition}{Definition}%[chapter]
+\newcommand{\definitionautorefname}{Definition}
+\newtheorem{lemma}{Lemma}%[theorem]
+\newcommand{\lemmaautorefname}{Lemma}
+\newtheorem{corollary}{Corollary}%[theorem]
+\newcommand{\corollaryautorefname}{Corollary}
+\newtheorem{corolario}{Corolario}[theorem]
+\newcommand{\corolarioautorefname}{Corolario}
+\theoremstyle{uptheorem} 
+\newtheorem{example}{Example}%[chapter]
+  \newaliascnt{examples}{example}
+  \newtheorem{examples}[examples]{Examples}
+  \aliascntresetthe{examples}
+  \def\exampleautorefname{Example}
+  \def\examplesautorefname{Examples}
+
+\newcommand{\notaautorefname}{Nota}
+
+\newtheoremstyle{uptheoremv2}{0.7cm}{}{\slshape}{}{\bfseries}{.}{ }{} 
+\theoremstyle{uptheoremv2} 
+\newtheorem{problem}[theorem]{Problem}
+\newcommand{\problemautorefname}{Problem}
+\newtheoremstyle{uptheoremv3}{}{}{\upshape\small}{}{\bfseries}{.}{ }{} 
+\theoremstyle{uptheoremv3}
+% \newtheorem{remark}{Remark}[chapter]
+
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+% \numberwithin{equation}{chapter}
+
+% \usepackage[backend=biber]{biblatex}
+% \bibliography{bib.bib}
+% \nocite{*}
+
+% 2024-01-26 Fri 00:23:25 -----------------------
+
+% \qformat{\textbf{\thequestion.}}
+\renewcommand{\thequestion}{\bfseries\arabic{question}}

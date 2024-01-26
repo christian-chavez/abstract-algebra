@@ -1,0 +1,3 @@
+# Ignore build directories
+_temp/
+*fuse_hidden*
