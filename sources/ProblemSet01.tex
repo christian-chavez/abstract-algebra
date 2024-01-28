@@ -53,17 +53,29 @@
 \question
     Compute the remainder when \(37^{100}\) is divided by 29.
 
-
 \begin{solution}
-    
+    Performing all arithmetic mod 29 , we have \(37^{100}=8^{100}\). Moreover, note that
+\[
+\begin{aligned}
+8^{28} & =\left(8^2\right)^2 \cdot\left(\left(8^2\right)^2\right)^2 \cdot\left(\left(\left(8^2\right)^2\right)^2\right)^2 \\
+& =6^2 \cdot\left(6^2\right)^2 \cdot\left(\left(6^2\right)^2\right)^2 \\
+& =7 \cdot 7^2 \cdot\left(7^2\right)^2 \\
+& =7 \cdot 20 \cdot 20^2 \\
+& =140 \cdot 23 \\
+& =24 \cdot 23 \\
+& =552 \\
+& =1 .
+\end{aligned}
+\]
+
+So we have \(8^{100}=8^{28} \cdot 8^{28} \cdot 8^{28} \cdot 8^{16}=8^{16}=23\), as computed above.
 \end{solution}
 
 \question
     Prove that the squares of the elements in \(\mathbb{Z} / 4 \mathbb{Z}\) are just \(\overline{0}\) and \(\overline{1}\).
-
-
 \begin{solution}
-    
+    Modulo 4, we have \(\overline{0}^2 = \overline{0}\), 
+    %  { Modulo } 4 \text {, we have } \overline{0}^2=\overline{0},, \overline{2}^2=\overline{4}=\overline{0} \text {, and } \overline{3}^2=\overline{9}=\overline{1}.
 \end{solution}
 
 \question
@@ -266,7 +278,7 @@ f^{-1}\left(\bigcup_i B_i\right)=\bigcup_i f^{-1}\left(B_i\right) \text { and } 
 
 
 \question
-    Let \(f: X \rightarrow Y\) be a function. Defi ne a relation on \(X\) by \(x \equiv x^{\prime}\) if \(f(x)=f\left(x^{\prime}\right)\). Prove that \(\equiv\) is an equivalence relation. If \(x \in X\) and \(f(x)=y\), the equivalence class \([x]\) is usually denoted by \(f^{-1}(y)\), the inverse image of \(\{y\}\).
+    Let \(f: X \rightarrow Y\) be a function. Define a relation on \(X\) by \(x \equiv x^{\prime}\) if \(f(x)=f\left(x^{\prime}\right)\). Prove that \(\equiv\) is an equivalence relation. If \(x \in X\) and \(f(x)=y\), the equivalence class \([x]\) is usually denoted by \(f^{-1}(y)\), the inverse image of \(\{y\}\).
 
 \begin{solution}
     
