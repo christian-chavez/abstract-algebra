@@ -1,4 +1,4 @@
 # Ignore build directories
-_temp/
+_temp/*
 !_temp/AA-Catedra.pdf
 *fuse_hidden*
