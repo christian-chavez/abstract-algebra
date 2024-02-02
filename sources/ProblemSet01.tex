@@ -11,10 +11,10 @@
     \item \(a=507885, b=60808\)
   \end{enumerate} 
 
-\begin{solution}
+\begin{solution} Using the (extended) Euclidean Algorithm, we get the following. Here \([a,b]\) denotes the least common multiple of \(a\) and \(b\).
     \begin{enumerate}[label=(\alph*)]
-        \item \(\gcd(a,b) = 11\), \(\lcm(a,b) = 19800\), \(\gcd(a,b)= 8a - 23b\)
-        \item \(\gcd(a,b) = 691\), \(\lcm(a,b) = 44693880\), \(\gcd(a,b)= -17a +142b\)
+        \item \((a,b) = 11\), \([a,b] = 19800\), \((a,b)= 8a - 23b\)
+        \item \((a,b) = 691\), \([a,b] = 44693880\), \((a,b)= -17a +142b\)
     \end{enumerate}
 \end{solution}
 
@@ -27,8 +27,26 @@
 \end{solution}
 
 \question
-    If \(p\) is a prime prove that there do not exist nonzero integers \(a\) and \(b\) such that \(a^2=p b^2\) (i.e., \(\sqrt{p}\) is not a rational number).
+    If \(p\) is a prime, prove that there do not exist nonzero integers \(a\) and \(b\) such that \(a^2=p b^2\). (Why this proves  \(\sqrt{p}\) is not a rational number.)
+\renewcommand{\solutiontitle}{}
+    \begin{solution}%[-10cm]
+    \vspace*{-\baselineskip}
+    % Let's use basic facts from the integers. 
+    \begin{proof}
+    Suppose \(p\) is a prime number and assume for the sake of contradiction that there do exist nonzero integers \(a\) and \(b\) such that \(a^2=p b^2\).
+    Either \(a\) and \(b\) share common factors other than \(1\) or not.
+%
+    Suppose first they do not have commont factors other than \(1\).
+    Notice \(a^2=p b^2\) implies \(p\mid a^2\), whence \(p\mid a\) (by Euclid's lemma), and thus  \(pk = a\) for some \(k\in \Z\). Thus, \(p^2k^2 = p b^2\) which implies \(p k^2 = b^2\). Then,  \(p\mid b^2\) and, as before,  \(p\mid b\). We have shown \(p\) divides both \(a\) and \(b\), so \(p\) is a common factor of both, a contradiction.
+%
+    If \(a\) and \(b\) share common factors other than \(1\), we can rule them out of the equation \(a^2=p b^2\) by using the Fundamental Theorem of Artihmetic to write \(a^2\) and \(b^2\) as powers of products of primes. Hence, we are led to the case above, which we proved cannot hold. 
+%
+    In any case we arrived at a contradiction and so we conclude our main assumption was false. The proof is complete.
+    \end{proof}
 
+    \textbf{Remark.} Euclid's lemma states that if a prime number divides the product of two integers, then it must divide at least one of those integers. On the other hand, this proof uses basic facts about the integers. However, by writing \((a/b)^2 = p\) we see that \(b=1\) because \(p\) is an integer. Thus \(a^2 = p\) implies \(p\) is composite, a contradiction.
+\end{solution}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution.} }
 
 % Dummit p. 11 ------------------------
 
@@ -41,7 +59,7 @@
         \{6+18 k \mid k \in \mathbb{Z}\},\{7+18 k \mid k \in \mathbb{Z}\},\{8+18 k \mid k \in \mathbb{Z}\} \\
         \{9+18 k \mid k \in \mathbb{Z}\},\{10+18 k \mid k \in \mathbb{Z}\},\{11+18 k \mid k \in \mathbb{Z}\} \\
         \{12+18 k \mid k \in \mathbb{Z}\},\{13+18 k \mid k \in \mathbb{Z}\},\{14+18 k \mid k \in \mathbb{Z}\} \\
-        \{15+18 k \mid k \in \mathbb{Z}\},\{16+18 k \mid k \in \mathbb{Z}\},\{17+18 k \mid k \in \mathbb{Z}\}
+        \{15+18 k \mid k \in \mathbb{Z}\},\{16+18 k \mid k \in \mathbb{Z}\},\text{ and }\{17+18 k \mid k \in \mathbb{Z}\}.
         \end{gathered}$$
     Note however that a more compact way to write this information is as follows: \[
         \Z/18\Z = \bigcup_{i=0}^{17} \left\{ \{i+18k \mid k\in \Z\} \right\}.
@@ -49,11 +67,13 @@
 \end{solution}
 
 \question
-    Prove that if \(a=a_n 10^n+a_{n-1} 10^{n-1}+\cdots+a_1 10+a_0\) is any positive integer then \(a \equiv a_n+a_{n-1}+\cdots+a_1+a_0(\bmod 9)(\) note that this is the usual arithmetic rule that the remainder after division by 9 is the same as the sum of the decimal digits mod \(9-\) in particular an integer is divisible by 9 if and only if the sum of its digits is divisible by 9 ) [note that \(10 \equiv 1(\bmod 9)\) ].
-
-
-\begin{solution}
-    
+    Prove that if \(a=a_n 10^n+a_{n-1} 10^{n-1}+\cdots+a_1 10+a_0\) is any positive integer then \(a \equiv a_n+a_{n-1}+\cdots+a_1+a_0\pmod 9\). (Note that this is the usual arithmetic rule that the remainder after division by 9 is the same as the sum of the decimal digits mod \(9-\) in particular an integer is divisible by 9 if and only if the sum of its digits is divisible by 9).
+    %[note that \(10 \equiv 1(\bmod 9)\) ].
+\begin{solution} By using the basic propeties of sum of classes, we have
+    \[
+        \overline{a}=\overline{\sum_{i=0}^n a_{i} 10^i}=\sum_{i=0}^n{\overline{a_i}}\overline{10}^i=\sum_{i=0}^n \overline{a_i} \cdot 1,
+    \] 
+    and we are done.
 \end{solution}
 
 \question
@@ -121,13 +141,10 @@ So we have \(8^{100}=8^{28} \cdot 8^{28} \cdot 8^{28} \cdot 8^{16}=8^{16}=23\), 
 
 
 \question
-    Let \(n \in \mathbb{Z}, n>1\), and let \(a \in \mathbb{Z}\) with \(1 \leq a \leq n\). Prove that if \(a\) and \(n\) are relatively prime then there is an integer \(c\) such that \(a c \equiv 1(\bmod n)\), [use the fact that the g.c.d. of two integers is a \(\mathbb{Z}\)-linear combination of the integers].
-
-
-
-\begin{solution}
-    
-\end{solution}
+    Let \(n \in \mathbb{Z}\), \(n>1\), and let \(a \in \mathbb{Z}\) with \(1 \leq a \leq n\). Prove that if \(a\) and \(n\) are relatively prime then there is an integer \(c\) such that \(a c \equiv 1\pmod n\). (Use the fact that the g.c.d. of two integers is a \(\mathbb{Z}\)-linear combination of the integers.)
+\begin{theproof}
+    Suppose \(a\) and \(n\) are relatively prime, which means \(\left( a,n \right)=1\). We know there are integers \(x\) and \(y\) such that \(1 = ax+ny\). Thus \(1 \equiv ax\pmod n\). Take \(c=x\) and conclude.
+\end{theproof}
 
 
 \question
@@ -155,12 +172,14 @@ So we have \(8^{100}=8^{28} \cdot 8^{28} \cdot 8^{28} \cdot 8^{16}=8^{16}=23\), 
 
 
 \question
-    If \(d=(a, b)\), prove that \(a / d\) and \(b / d\) are relatively prime.
-
-
-\begin{solution}
-    
-\end{solution}
+Let \(a\) and \(b\) be nonzero integers and let \(d=(a, b)\). Prove that \(a / d\) and \(b / d\) are relatively prime.
+\begin{theproof}
+    Let \(d' = (a/d, b/d)\).
+    There are integers \(x\) and \(y\) such that \(d = ax+ by\).
+    Thus  \[1 = \frac{a}{d}x + \frac{b}{d}y.\] 
+    Because \(d'\) divides any linear combination of \(a/d\) and \(b/d\), it follows \(d'\mid 1\). 
+    Hence \(d'=1\) and the proof is complete.
+\end{theproof}
 
 
 \question
@@ -186,11 +205,12 @@ d=s_k a+t_k b
 
 \question
     If \(a\) and \(b\) are relatively prime and if each divides an integer \(n\), then their product \(a b\) also divides \(n\).
-
-
-\begin{solution}
-    
-\end{solution}
+\begin{theproof}
+    Let \(d= \left( a,b \right)\) and \(l=[a,b]\).
+    Suppose \(a\) and \(b\) are relatively prime and that each one divides an integer \(n\).
+    Since \(n\) is  a common multiple of \(a\) and \(b\), then \(n\) must be divisible by \(l\).
+    Notice \(l=ab\) because   \(dl = ab\) and  \(d=1\). Thus \(ab\mid n\), as desired.
+\end{theproof}
 
 
 \question
@@ -284,9 +304,14 @@ f^{-1}\left(\bigcup_i B_i\right)=\bigcup_i f^{-1}\left(B_i\right) \text { and } 
 
 
 \question
-    Let \(f: X \rightarrow Y\) be a function. Define a relation on \(X\) by \(x \equiv x^{\prime}\) if \(f(x)=f\left(x^{\prime}\right)\). Prove that \(\equiv\) is an equivalence relation. If \(x \in X\) and \(f(x)=y\), the equivalence class \([x]\) is usually denoted by \(f^{-1}(y)\), the inverse image of \(\{y\}\).
+    Let \(f: X \rightarrow Y\) be a function. Define a relation on \(X\) by \(x \equiv x^{\prime}\) if \(f(x)=f\left(x^{\prime}\right)\). Prove that \(\equiv\) is an equivalence relation. (If \(x \in X\) and \(f(x)=y\), the equivalence class \([x]\) is usually denoted by \(f^{-1}(y)\), the inverse image of \(\{y\}\).)
 
-\begin{solution}
-    
-\end{solution}
+\begin{theproof} We prove the defining properties of an equivalence relation. Let \(x,y,z\in X\).
+\begin{enumerate}[label=(\roman*)]
+    \item (Reflexity) Because   \(f(x) = f(x)\), we have  \(x\equiv x\).
+    \item (Symmetry) Suppose \(x\equiv y\), which means \(f(x) = f(y)\). Clearly \(f(y) = f(x)\), which, by definition, is equivalent to  \(y\equiv x\).
+    \item (Transitivity) Suppose \(x\equiv y\) and \(y\equiv z\). Then \(f(x) = f(y)\) and \(f(y) = f(z)\), whence \(f(x) = f(z)\). Therefore \(x\equiv z\).
+\end{enumerate}
+    The proof is finished.
+\end{theproof}
 \end{questions}
