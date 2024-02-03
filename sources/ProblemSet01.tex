@@ -22,9 +22,11 @@
 \question
     Prove that if \({n}\) is composite then there are integers \(a\) and \(b\) such that \(n\) divides \(a b\) but \(n\) does not divide either \(a\) or \(b\).
 
-\begin{solution}
-    Let \(n\) be composite. By definition we have \(n=a b\) for some integers \(a\) and \(b\) with \(a, b \neq \pm 1, \pm n\). Clearly \(n \mid a b\). Now suppose by way of contradiction that \(n \mid a\). Then we have \(k n=a\) for some integer \(k\). Now \(k b a=a\), so \((k b-1) a=0\), so \(k b=1\). Thus \(b= \pm 1\), a contradiction. Hence,  \(n\) does not divide \(a\). Similarly, \(n\) does not divide \(b\).
-\end{solution}
+\begin{theproof}
+    Let \(n\) be composite. Recall this means \(n\) is a positive integer greater than \(1\). By definition, \(n\) has positive divisors other than \(1\) and \(n\). Thus, \(n=a b\) for some positive integers \(a\) and \(b\) with \(a,b\notin \left\{ 1,n \right\}\). Clearly \(n \mid a b\).
+    Since \(a < n\), we have \(n\nmid a\). Similarly \(n\nmid b\). We are done.
+    % Now suppose by way of contradiction that \(n \mid a\). Then we have \(k n=a\) for some integer \(k\). Now \(k b a=a\), so \((k b-1) a=0\), so \(k b=1\). Thus \(b= \pm 1\), a contradiction. Hence,  \(n\) does not divide \(a\). Similarly, \(n\) does not divide \(b\).
+\end{theproof}
 
 \question
     If \(p\) is a prime, prove that there do not exist nonzero integers \(a\) and \(b\) such that \(a^2=p b^2\). (Why this proves  \(\sqrt{p}\) is not a rational number.)
@@ -39,12 +41,12 @@
     Suppose first they do not have commont factors other than \(1\).
     Notice \(a^2=p b^2\) implies \(p\mid a^2\), whence \(p\mid a\) (by Euclid's lemma), and thus  \(pk = a\) for some \(k\in \Z\). Thus, \(p^2k^2 = p b^2\) which implies \(p k^2 = b^2\). Then,  \(p\mid b^2\) and, as before,  \(p\mid b\). We have shown \(p\) divides both \(a\) and \(b\), so \(p\) is a common factor of both, a contradiction.
 %
-    If \(a\) and \(b\) share common factors other than \(1\), we can rule them out of the equation \(a^2=p b^2\) by using the Fundamental Theorem of Artihmetic to write \(a^2\) and \(b^2\) as powers of products of primes. Hence, we are led to the case above, which we proved cannot hold. 
+    If \(a\) and \(b\) share common factors other than \(1\), we can rule them out of the equation \(a^2=p b^2\) by using the Fundamental Theorem of Arithhmetic to write \(a^2\) and \(b^2\) as powers of products of primes. Hence, we are led to the case above, which we proved cannot hold. 
 %
     In any case we arrived at a contradiction and so we conclude our main assumption was false. The proof is complete.
     \end{proof}
 
-    \textbf{Remark.} Euclid's lemma states that if a prime number divides the product of two integers, then it must divide at least one of those integers. On the other hand, this proof uses basic facts about the integers. However, by writing \((a/b)^2 = p\) we see that \(b=1\) because \(p\) is an integer. Thus \(a^2 = p\) implies \(p\) is composite, a contradiction.
+    \textbf{Remark.} Euclid's lemma states that if a prime number divides the product of two integers, then it must divide at least one of those integers. On the other hand, this proof uses basic facts about the integers. However, by writing \((a/b)^2 = p\) we see that \(b=1\) because \(p\) is an integer and the rationals that are also integers are the ones that have denominator \(1\). Thus \(a^2 = p\) implies \(p\) is composite, a contradiction.
 \end{solution}
 \renewcommand{\solutiontitle}{\noindent\textbf{Solution.} }
 
@@ -67,12 +69,15 @@
 \end{solution}
 
 \question
-    Prove that if \(a=a_n 10^n+a_{n-1} 10^{n-1}+\cdots+a_1 10+a_0\) is any positive integer then \(a \equiv a_n+a_{n-1}+\cdots+a_1+a_0\pmod 9\). (Note that this is the usual arithmetic rule that the remainder after division by 9 is the same as the sum of the decimal digits mod \(9-\) in particular an integer is divisible by 9 if and only if the sum of its digits is divisible by 9).
+    Suppose \(a=a_n 10^n+a_{n-1} 10^{n-1}+\cdots+a_1 10+a_0\) is any positive integer. Show  that \(a \equiv a_n+a_{n-1}+\cdots+a_1+a_0\pmod 9\). (Note that this is the usual arithmetic rule that the remainder after division by 9 is the same as the sum of the decimal digits mod \(9\). In particular, an integer is divisible by 9 if and only if the sum of its digits is divisible by 9).
     %[note that \(10 \equiv 1(\bmod 9)\) ].
-\begin{solution} By using the basic propeties of sum of classes, we have
+\begin{solution}
+    Let \(\overline{a}\) denote the residue class of \(a\) mod \(9\). Using modular arithmetic we have 
     \[
-        \overline{a}=\overline{\sum_{i=0}^n a_{i} 10^i}=\sum_{i=0}^n{\overline{a_i}}\overline{10}^i=\sum_{i=0}^n \overline{a_i} \cdot 1,
+        \overline{a}=\overline{\sum_{k=0}^n a_{k} 10^k}=\sum_{k=0}^n{\overline{a_k}}\cdot \overline{10}^k=\sum_{k=0}^n \overline{a_k} \cdot 1.
     \] 
+    Equivalently, this can be written as 
+    \[a \equiv a_n+a_{n-1}+\cdots+a_1+a_0\pmod 9,\]
     and we are done.
 \end{solution}
 
@@ -80,7 +85,7 @@
     Compute the remainder when \(37^{100}\) is divided by 29.
 
 \begin{solution}
-    Performing all arithmetic mod 29 , we have \(37^{100}=8^{100}\). Moreover, note that
+    Performing all arithmetic mod \(29\), we have \(37^{100}=8^{100}\). Moreover, note that
 \[
 \begin{aligned}
 8^{28} & =\left(8^2\right)^2 \cdot\left(\left(8^2\right)^2\right)^2 \cdot\left(\left(\left(8^2\right)^2\right)^2\right)^2 \\
@@ -99,45 +104,59 @@ So we have \(8^{100}=8^{28} \cdot 8^{28} \cdot 8^{28} \cdot 8^{16}=8^{16}=23\), 
 
 \question
     Prove that the squares of the elements in \(\mathbb{Z} / 4 \mathbb{Z}\) are just \(\overline{0}\) and \(\overline{1}\).
-\begin{solution}
-    Modulo 4, we have \(\overline{0}^2 = \overline{0}\), 
+\begin{theproof}
+    We have \(\mathbb{Z} / 4 \mathbb{Z} =\left\{ \overline{0},\overline{1},\overline{2},\overline{3} \right\}  \). 
+    Modulo 4, we have \(\overline{0}^2 = \overline{0}\), \(\overline{1}^2 = \overline{1}\), \(\overline{2}^2 = \overline{4} = \overline{0}\), and \(\overline{3}^2 = \overline{9} = \overline{1}\).
     %  { Modulo } 4 \text {, we have } \overline{0}^2=\overline{0},, \overline{2}^2=\overline{4}=\overline{0} \text {, and } \overline{3}^2=\overline{9}=\overline{1}.
-\end{solution}
+\end{theproof}
 
 \question
-    Prove for any integers \(a\) and \(b\) that \(a^2+b^2\) never leaves a remainder of 3 when divided by 4 (use the previous exercise).
-
-
-\begin{solution}
-    
-\end{solution}
-
-
-\question
-    Prove that the equation \(a^2+b^2=3 c^2\) has no solutions in nonzero integers \(a, b\) and \(c\). [Consider the equation mod 4 as in the previous two exercises and show that \(a, b\) and \(c\) would all have to be divisible by 2 . Then each of \(a^2, b^2\) and \(c^2\) has a factor of 4 and by dividing through by 4 show that there would be a smaller set of solutions to the original equation. Iterate to reach a contradiction.]
-
-
-\begin{solution}
-    
-\end{solution}
+    Let \(a,b\in \Z\).
+    Prove  that \(a^2+b^2\) never leaves a remainder of 3 when divided by 4. (Hint: use the previous exercise.)
+\begin{theproof}
+    Suppose \(a^2+b^2\) can be divided by \(4\) (so, it is not zero). 
+    By the division algorithm, there are unique integers \(q\) and \(r\) such that \(a^2+b^2 = 4q +r\) with \(0\leq r < 4\). Then \(\overline{a^2+b^2} \equiv \overline{r}\), taking congruence classes mod \(4\). By the previous exercise, \(\overline{a^2+b^2}=\overline{a}^2 + \overline{b}^2\) can only be \(\overline{0}\), \(\overline{1}\) or \(\overline{2}\). Thus \(\overline{r}\neq \overline{3}\), whence \(r\neq 3\). 
+\end{theproof}
 
 
 \question
-    Prove that if \(\bar{a}, \bar{b} \in(\mathbb{Z} / n \mathbb{Z})^{\times}\), then \(\bar{a} \cdot \bar{b} \in(\mathbb{Z} / n \mathbb{Z})^{\times}\).
-
-
-\begin{solution}
-    
-\end{solution}
+    Prove that the equation \(x^2+y^2=3 z^2\) has no solutions for positive integers \(x\), \(y\) and \(z\).
+    %(Consider the equation mod 4 as in the previous two exercises and show that \(a, y\) and \(z\) would all have to be divisible by 2. Then each of \(x^2\), \(y^2\) and \(c^2\) has a factor of 4 and by dividing through by 4 show that there would be a smaller set of solutions to the original equation. Iterate to reach a contradiction.)
+\begin{theproof}%(The hint is the sketch of one proof. Here  is an alternative.)
+    Suppose, to the contrary, there are  are nonzero integers  \(x\), \(y\), and \(z\) such that \(x^2 + y^2 = 3 z^2\).
+    Either these integers have  factors in common or not.
+    %    
+    If they do, we can factor them out of the equation \(x^2 + y^2 = 3 z^2\) to get a new equation \(\hat{x}^2 + \hat{y}^2 = 3 \hat{z}^2\) where \(\hat{x}\), \(\hat{y}\) and \(\hat{z}\) do not share common factors. This situation lead us to the second case, so we only need to prove such a case is imposible.
+    Suppose  \(x\), \(y\), and \(z\) do not share common factors.
+    Taking residue classes modulo \(3\), we have \(\overline{x}^2 + \overline{y}^2 = \overline{0}\). This equation is satisfied (if and) only if \(x\) and \(y\) are multiples of \(3\).
+    Indeed, if \(k\) is any integer, then \(\overline{k}\) can only be \(\overline{0}\), \(\overline{1}\) or \(\overline{2}\); thus \(\overline{k}^2\) can only be \(\overline{0}\) or \(\overline{1}\). Since \(\overline{1} + \overline{0} = \overline{0} + \overline{1} = \overline{1}\) and \(\overline{1} + \overline{1} = \overline{2}\), the only possible case is \(\overline{x}^2 = \overline{y}^2 = \overline{0}\). In other words, \(3\mid x^2\) and \(3\mid y^2\). Euclid's lemma implies \(3\) divides both \(x\) and \(y\). Finally, notice  this implies the left side of \({x}^2 + {y}^2 = 3 {z}^2\) is a multiple of \(9\) and by dividing by \(3\) we get \(z^2\) is a multiple of \(3\), whence \(z\) is also a multiple of \(3\). We have shown that \(x\), \(y\), and \(z\) have  \(3\) as common factor, which is a contradiction. The proof is complete.
+\end{theproof}
 
 
 \question
-    Let \(n \in \mathbb{Z}, n>1\), and let \(a \in \mathbb{Z}\) with \(1 \leq a \leq n\). Prove if \(a\) and \(n\) are not relatively prime, there exists an integer \(b\) with \(1 \leq b<n\) such that \(a b \equiv 0(\bmod n)\) and deduce that there cannot be an integer \(c\) such that \(a c \equiv 1(\bmod n)\).
+    Prove that if \(\overline{a}, \overline{b} \in(\mathbb{Z} / n \mathbb{Z})^{\times}\), then \(\overline{a} \cdot \overline{b} \in(\mathbb{Z} / n \mathbb{Z})^{\times}\).
+\begin{theproof}
+    Suppose \(\overline{a}, \overline{b} \in(\mathbb{Z} / n \mathbb{Z})^{\times}\). Then there are \(\overline{x}, \overline{y} \in(\mathbb{Z} / n \mathbb{Z})^{\times}\) such that \(\overline{a}\cdot \overline{x} = \overline{1}\) and \(\overline{b}\cdot \overline{y} = \overline{1}\). Thus \[(\overline{a}\cdot\overline{b})\cdot (\overline{x}\cdot \overline{y}) = (\overline{a}\cdot \overline{x})\cdot (\overline{b}\cdot \overline{y}) = \overline{1},\]
+    whence the result follows.
+\end{theproof}
 
 
-\begin{solution}
-    
-\end{solution}
+\question
+    Let \(n \in \mathbb{Z}\), \(n>1\), and let \(a \in \mathbb{Z}\) with \(1 \leq a \leq n\). Prove if \(a\) and \(n\) are not relatively prime, there exists an integer \(b\) with \(1 \leq b<n\) such that \(a b \equiv 0\pmod n\) and deduce that there cannot be an integer \(c\) such that \(a c \equiv 1\pmod n\).
+\begin{theproof}
+    Suppose \(d=(a,n ) > 1\).
+    % Recall \(dl = an\) where \(l=[a,b]\).
+    % Notice that if \(a=1\), then \(d=1\) which cannot hold. Thus assume \(a>1\).
+    % Either \(n\) is a multiple of \(a\) or not. 
+    % If it is, then \(ak = n\) for some  \(k\in \Z\) with \(1\leq k < n\)  (note \(k\neq n\) as \(a>1\)). In this case, we take \(b=k\) and we are done.
+    % Now suppose \(n\) is not a multiple of \(a\). There are integers \(x\) and \(y\) such that \(ax + ny = d\). Notice here \(y\neq 0\); otherwise \(a\mid d\), and since \(d\mid n\) we would have \(a\mid n\), a contradiction.
+    % Recall \(dl = an\) where \(l=[a,b]\).
+    % Then \(axl + nyl = dl = an\), whence \(axl \equiv 0\pmod n\).
+    By definition, \( a = dx \) and \(dy = n\) for some positive integers \(x\)  and \(y\).
+    Thus \(ay = dxy = nx\), whence \(ay \equiv 0\pmod n\). Since \(d >1\), we have \(y < n\). 
+    Take \(b = y\).
+    If there were an integer \(c\) such that \(a c \equiv 1\pmod n\), then \(abc \equiv b \pmod n\), whence \(0\equiv b\pmod n\). This is a contradiction since \(1 \leq b<n\).
+\end{theproof}
 
 
 \question
