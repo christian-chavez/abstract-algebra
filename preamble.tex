@@ -43,6 +43,7 @@
     titlesec,
     cancel,
     currfile,
+    xcolor,
 }
 \usepackage[perpage]{footmisc}
 
@@ -252,7 +253,7 @@
 % 2024-01-26 Fri 00:23:25 -----------------------
 
 \renewcommand{\thequestion}{\bfseries\arabic{question}}
-\renewcommand{\solutiontitle}{\noindent\textbf{Solution.}\enspace}
+\renewcommand{\solutiontitle}{\noindent\textit{Solution.}\enspace}
 \unframedsolutions
 
 % 2024-01-27 Sat 22:51:15 -----------------------
@@ -270,5 +271,8 @@
 {
     \end{proof}
     \end{solution}
-    \renewcommand{\solutiontitle}{\noindent\textbf{Solution.} }
+    \renewcommand{\solutiontitle}{\noindent\textit{Solution.} }
 }
+
+% 2024-02-03 Sat 19:57:54 ----------------
+\color{black!90}
