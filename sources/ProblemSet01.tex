@@ -63,7 +63,7 @@
         \{12+18 k \mid k \in \mathbb{Z}\},\{13+18 k \mid k \in \mathbb{Z}\},\{14+18 k \mid k \in \mathbb{Z}\} \\
         \{15+18 k \mid k \in \mathbb{Z}\},\{16+18 k \mid k \in \mathbb{Z}\},\text{ and }\{17+18 k \mid k \in \mathbb{Z}\}.
         \end{gathered}$$
-    Note however that a more compact way to write this information is as follows: \[
+    Note however that a more compact (implicit) way to write this information is as follows: \[
         \Z/18\Z = \bigcup_{i=0}^{17} \left\{ \{i+18k \mid k\in \Z\} \right\}.
     \]
 \end{solution}
@@ -158,7 +158,7 @@ So we have \(8^{100}=8^{28} \cdot 8^{28} \cdot 8^{28} \cdot 8^{16}=8^{16}=23\), 
     By definition, \( a = dx \) and \(dy = n\) for some positive integers \(x\)  and \(y\).
     Thus \(ay = dxy = nx\), whence \(ay \equiv 0\pmod n\). Since \(d >1\), we have \(y < n\). 
     Take \(b = y\).
-    If there were an integer \(c\) such that \(a c \equiv 1\pmod n\), then \(abc \equiv b \pmod n\), whence \(0\equiv b\pmod n\). This is a contradiction since \(1 \leq b<n\).
+    If there were an integer \(c\) such that \(a c \equiv 1\pmod n\), then \(abc \equiv b \pmod n\), whence \(0\equiv b\pmod n\). This is a contradiction since \(1 \leq b<n\), i.e., \(b\) is not a multiple of \(n\).
 \end{theproof}
 
 
@@ -261,7 +261,7 @@ Let \(a,b,c\in\Z\) with  \(a>0\). Prove that \(a(b, c)=(a b, a c)\). (One must a
      A Pythagorean triple is a 3-tuple \((a, b, c)\) of positive integers for which
 \[
 a^2+b^2=c^2.
-\] A pythagorean triple is  called primitive if  \(\operatorname{gcd}(a, b, c)=1\). (\textit{Definition.} A common divisor of nonzero integers \(a_1, a_2, \ldots, a_n\) is an integer \(c\) such that \(c \mid a_i\) for all \(i\in \left\{ 1,\dots,n \right\}\). The largest of the common divisors   is called its greatest common divisor.)
+\] A Pythagorean triple is  called primitive if  \(\operatorname{gcd}(a, b, c)=1\). (\textit{Definition.} A common divisor of nonzero integers \(a_1, a_2, \ldots, a_n\) is an integer \(c\) such that \(c \mid a_i\) for all \(i\in \left\{ 1,\dots,n \right\}\). The largest of the common divisors   is called its greatest common divisor.)
 \begin{enumerate}[label=(\alph*)]
     \item Consider a complex number \(z=q+i p\), where \(q>p\) are positive integers. Prove that
 \[
@@ -276,7 +276,7 @@ is a Pythagorean triple by showing that \(\left|z^2\right|=|z|^2\). (One can pro
     \item Note \(|z^2| = |z\cdot z| = |z||z|=|z|^2\).
     Now \(z^2=\left(q^2-p^2\right)+i 2 q p\), so that \(\left|z^2\right|=\left(q^2-p^2\right)^2+(2 q p)^2\). On the other hand, \(|z|^2=\left(q^2+p^2\right)^2\). Thus, if we define \(a=q^2-p^2\), \(b=2 q p\), and \(c=q^2+p^2\), then \(a^2+b^2=c^2\). We have shown  \((a, b, c)\) is a Pythagorean triple, completing the proof.
 
-    \item Suppose there are positive integers \(p\) and \(q\), with \(q>p\), such that  \((9,12,15)\) is a pythagorean triple of the type above. Then \(2 q p=\) 12 and \(q p=6\). Since \(q>p\) are positive integers, the only possibilities are \(q=6\) and \(p=1\) or \(q=3\) and \(p=2\). The first possibility gives the Pythagorean triple \((12,35,37)\) while the second gives the Pythagorean triple \((5,12,13)\).  Contradiction.
+    \item Suppose there are positive integers \(p\) and \(q\), with \(q>p\), such that  \((9,12,15)\) is a Pythagorean triple of the type above. Then \(2 q p=\) 12 and \(q p=6\). Since \(q>p\) are positive integers, the only possibilities are \(q=6\) and \(p=1\) or \(q=3\) and \(p=2\). The first possibility gives the Pythagorean triple \((12,35,37)\) while the second gives the Pythagorean triple \((5,12,13)\).  Contradiction.
 \end{enumerate}
 \end{theproof}
 
@@ -284,7 +284,7 @@ is a Pythagorean triple by showing that \(\left|z^2\right|=|z|^2\). (One can pro
 \question
     Let \(X\) and \(Y\) be finite sets. Show that there is a bijection \(f\colon X \rightarrow Y\) if and only if \(|X|=|Y|\). (By definition, a set is finite if it is empty or if it can be put in a one-to-one correspondence with \([k] = \left\{ 1,2,\ldots, k \right\}\), for some integer \(k\geq 1\).)
 
-\begin{proof} There is nothing to prove. This is the definition of cardinality. 
+\begin{proof} There is nothing to prove. This is the definition of cardinality. It does not matter whether \(X\) and \(Y\) are finite sets or not.
     % See Rotman, p. 94.
 % \begin{itemize}
 %     \item[(\(\Rightarrow\))] If \(f\colon X \rightarrow Y\)  is a bijection, it follows, by definition, that \(|X|=|Y|\).
@@ -307,13 +307,17 @@ is a Pythagorean triple by showing that \(\left|z^2\right|=|z|^2\). (One can pro
     \item[(a) \(\Rightarrow\) (b)] This follows from the definition of bijection.
     
     \item[(b) \(\Rightarrow\) (c)] Suppose \(f\) is injective. 
-    Because \(X\) is finite, \(f(X)\) must contain at least \(|X|\) elements. Also, \(f(X)\subseteq Y\) implies \(f(X)\) must have  at most \(|Y|\) elements. Since \(|X| = |Y|\), it follows  \(f(X) = Y\), i.e., \(f\) is surjective.
+    Because \(X\) is finite, \(f(X)\) must contain   \(|X|\) elements.
+    % Also, \(f(X)\subseteq Y\) implies \(f(X)\) must have  at most \(|Y|\) elements.
+    Since \(|X| = |Y|\) and \(f(X)\subseteq Y\), it follows  \(f(X) = Y\), i.e., \(f\) is surjective.
     (Alternatively, this can be proved by induction on the number of elements of \(X\).)
     
     \item[(c) \(\Rightarrow\) (a)] Suppose \(f\) is a surjection, which means it has a right inverse \(g\colon B\to A\). 
     Equivalently,  \(f\) is a left inverse for \(g\). 
     Thus \(g\) is injective. By the preceeding proof, \(g\) is surjective and hence it is a bijection. In other words, \(g\) is invertible.
-    From \(f\circ g = 1_B\), we get \(f\)  is invertible an thus a bijection.
+    This means \(g\) has a two-sided inverse.
+    Since inverses are unique and  \(f\circ g = 1_B\), we get \(f=g^{-1}\).
+    Hence, \(f\)  is invertible an thus a bijection.
 \end{itemize}
 
 \end{theproof}
@@ -361,7 +365,7 @@ f\left(\bigcup_{i \in I} S_i\right)=\bigcup_{i \in I} f\left(S_i\right)
 \[
 f^{-1}\left(\bigcup_{\lambda\in\Lambda} B_{\lambda}\right)=\bigcup_{\lambda\in\Lambda} f^{-1}\left(B_\lambda\right) \quad\text{and}\quad f^{-1}\left(\bigcap_{\lambda\in\Lambda} B_\lambda\right)=\bigcap_{\lambda\in\Lambda} f^{-1}\left(B_{\lambda}\right).
 \]
-        \item If \(B \subseteq Y\), prove that \(f^{-1}\left(B^{\complement}\right)=f^{-1}(B)^{\complement}\), where \(B^{\complement}\) denotes the complement of \(B\).
+        \item If \(B \subseteq Y\), prove that \(f^{-1}\left(B^{\complement}\right)=f^{-1}(B)^{\complement}\), where \(B^{\complement}\) denotes the complement of \(B\) respect to \(Y\).
     \end{enumerate}
 
 \begin{theproof}
